@@ -1,14 +1,20 @@
 import React from "react";
-import Header from "./common/Header";
-import Footer from "./common/Footer";
+import Header from "./common/Header.js"; // Corrected to .js
+import Footer from "./common/Footer.js"; // Corrected to .js
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import Home from "./pages/Home";
-import Cart from "./pages/Cart";
-import NotFoundPage from "./pages/NotFoundPage";
-import Shop from "./pages/Shop";
-import ContactUs from "./pages/Contact";
-import AboutUs from "./pages/AboutUs";
-import Blog from "./pages/Blog";
+
+// Standard Page Imports (Corrected to .js)
+import Home from "./pages/Home.js";
+import Cart from "./pages/Cart.js";
+import NotFoundPage from "./pages/NotFoundPage.js";
+import Shop from "./pages/Shop.js";
+import ContactUs from "./pages/Contact.js";
+import AboutUs from "./pages/AboutUs.js";
+import Blog from "./pages/Blog.js";
+
+// NEW IMPORTS - Corrected to .js
+import LoginPage from "./pages/LoginPage.js"; 
+import SignUpPage from "./pages/SignUpPage.js"; 
 
 const App = () => {
   return (
@@ -23,6 +29,11 @@ const App = () => {
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/blog" element={<Blog />} />
+          
+          {/* Routes for Login and Signup */}
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignUpPage />} />
+          
           <Route path="/*" element={<NotFoundPage />} />
         </Routes>
         <Footer />
