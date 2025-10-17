@@ -1,14 +1,18 @@
 import React from "react";
 import PageHeading from "../common/PageHeading";
+import { products } from "../data/Data";
+import ProductListing from "../components/ProductListing";
 
 const Blog = () => {
+  // Filter only kitchen products
+  const kitchenProducts = products.filter(
+    (product) => product.category === "Kitchen"
+  );
+
   return (
     <div>
-      <PageHeading home={"home"} pagename={"Blog"} />
-
-      <div className="w-10/12 m-auto">
-        <div className="my-8 text-3xl font-bold">Blog</div>
-      </div>
+      <PageHeading home={"home"} pagename={"Kitchen"} />
+      <ProductListing products={kitchenProducts} pageName="Kitchen" />
     </div>
   );
 };

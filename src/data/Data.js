@@ -12,17 +12,17 @@ export const navbar = [
   {
     id: 3,
     path: "/blog",
-    nav: "Blog",
+    nav: "Kitchen",
   },
   {
     id: 4,
     path: "/about",
-    nav: "About Us",
+    nav: "Bed Room",
   },
   {
     id: 5,
     path: "/contact",
-    nav: "Contact Us",
+    nav: "Living Room",
   },
 ];
 

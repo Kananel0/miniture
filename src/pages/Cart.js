@@ -48,7 +48,7 @@ const Cart = () => {
             <div>
               <div>
                 <table className="w-full shadow-2xl rounded-2xl">
-                  <thead className="bg-blue-950 text-white font-semibold">
+                  <thead className="font-semibold text-white bg-blue-950">
                     <tr>
                       <th className="px-4 py-2"></th>
                       <th className="px-4 py-2">Product</th>
@@ -60,7 +60,7 @@ const Cart = () => {
                   <tbody>
                     {cartProducts.map((item, key) => (
                       <tr key={key}>
-                        <td className="text-center px-4 py-2">
+                        <td className="px-4 py-2 text-center">
                           <span
                             className="text-red-500"
                             onClick={() => removeFromCart(item.id)}
@@ -68,32 +68,32 @@ const Cart = () => {
                             <FaTimes />
                           </span>
                         </td>
-                        <td className="text-center px-4 py-2">
+                        <td className="px-4 py-2 text-center">
                           <div className="flex items-center justify-center">
                             <img
                               src={item.img}
                               alt="img"
-                              className="h-40 w-40 object-contain mr-2"
+                              className="object-contain w-40 h-40 mr-2"
                             />
                             <p className="font-semibold">{item.title}</p>
                           </div>
                         </td>
-                        <td className="text-center px-4 py-2">${item.price}</td>
-                        <td className="text-center px-4 py-2">
+                        <td className="px-4 py-2 text-center">${item.price}</td>
+                        <td className="px-4 py-2 text-center">
                           <div className="flex mr-3">
                             <button
-                              className="border mt-4 py-3 px-6"
+                              className="px-6 py-3 mt-4 border"
                               onClick={() =>
                                 decreaseQuantity(item.id, item.quantity)
                               }
                             >
                               <PiMinus />
                             </button>
-                            <span className="border mt-4 py-3 px-6 count">
+                            <span className="px-6 py-3 mt-4 border count">
                               {item.quantity || 1}
                             </span>
                             <button
-                              className="border mt-4 py-3 px-6"
+                              className="px-6 py-3 mt-4 border"
                               onClick={() =>
                                 increaseQuantity(item.id, item.quantity)
                               }
@@ -102,7 +102,7 @@ const Cart = () => {
                             </button>
                           </div>
                         </td>
-                        <td className="text-center px-4 py-2">
+                        <td className="px-4 py-2 text-center">
                           ${item.price * item.quantity}
                         </td>
                       </tr>
@@ -111,8 +111,8 @@ const Cart = () => {
                 </table>
               </div>
 
-              <div className="p-6 w-2/5 rounded-2xl shadow-2xl bg-white font-bold mt-4">
-                <h1 className="mb-4 text-center text-3xl">Cart Total</h1>
+              <div className="w-2/5 p-6 mt-4 font-bold bg-white shadow-2xl rounded-2xl">
+                <h1 className="mb-4 text-3xl text-center">Cart Total</h1>
                 <h2 className="flex justify-between mt-3">
                   Sub Total : <span>${totalAmount}</span>
                 </h2>
@@ -125,12 +125,12 @@ const Cart = () => {
                   Grand Total : <span>$ {totalAmount + 10}</span>
                 </div>
 
-                <div className="whitespace-nowrap flex items-center justify-between mt-4">
-                  <div className="px-4 py-2 common-hover rounded-lg text-white">
-                    <Link>Proceed To Checkout</Link>
+                <div className="flex items-center justify-between mt-4 whitespace-nowrap">
+                  <div className="px-4 py-2 text-white rounded-lg common-hover">
+                    <Link to={"/login"}>Proceed To Checkout</Link>
                   </div>
 
-                  <div className="px-4 py-2 bg-rose-800 rounded-lg text-white">
+                  <div className="px-4 py-2 text-white rounded-lg bg-rose-800">
                     <Link to={"/shop"}>Continue Shopping</Link>
                   </div>
                 </div>

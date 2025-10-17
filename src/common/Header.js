@@ -32,15 +32,15 @@ const Header = () => {
       <div
         className={`${sticky ? "header py-4 sticky top-0 z-50 shadow-xl" : ""}`}
       >
-        <div className="flex flex-wrap justify-between items-center w-10/12 m-auto">
+        <div className="flex flex-wrap items-center justify-between w-10/12 m-auto">
           <div>
             <div class="logo">miniture</div>
           </div>
-          <div className="md:flex flex-wrap text-base py-3">
+          <div className="flex-wrap py-3 text-base md:flex">
             {navbar.map((nav, key) => (
               <div key={key} className="mr-5">
                 <Link
-                  className="active link-hover transition-all"
+                  className="transition-all active link-hover"
                   to={nav.path}
                 >
                   {nav.nav}
@@ -50,13 +50,13 @@ const Header = () => {
           </div>
 
           <li className="flex">
-            <Link onClick={toggleSidebar} className=" mr-5 text-2xl">
+            <Link onClick={toggleSidebar} className="mr-5 text-2xl ">
               <HiOutlineHeart />
             </Link>
-            <Link className=" mr-5 text-2xl">
+            <Link className="mr-5 text-2xl ">
               <HiOutlineUser />
             </Link>
-            <Link onClick={toggleSidebar} className="relative  mr-5 text-2xl">
+            <Link onClick={toggleSidebar} className="relative mr-5 text-2xl">
               <MdOutlineShoppingBag />
 
               <div className="items_count">

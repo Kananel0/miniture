@@ -68,8 +68,8 @@ const Shop = () => {
       <PageHeading home={"home"} pagename={"Shop"} />
 
       <div>
-        <div className="w-10/12 m-auto flex gap-3 items-start mt-8 ">
-          <div className="filterproduct w-1/4 bg-white shadow-lg p-4">
+        <div className="flex items-start w-10/12 gap-3 m-auto mt-8 ">
+          <div className="w-1/4 p-4 bg-white shadow-lg filterproduct">
             <div>
               <div className="my-4">
                 <h1 className="text-4xl font-semibold">Filter</h1>
@@ -133,24 +133,24 @@ const Shop = () => {
             <div className="grid grid-cols-3 gap-3">
               {filteredProducts.map((item, index) => (
                 <div key={index}>
-                  <div className="overflow-hidden relative ml-4">
-                    <div className="image-container relative">
+                  <div className="relative ml-4 overflow-hidden">
+                    <div className="relative image-container">
                       <div className="rounded-3xl">
                         <img src={item.img} alt="img" className="rounded-3xl" />
                       </div>
 
-                      <div className="opacity-0 absolute top-0 right-0 m-4">
+                      <div className="absolute top-0 right-0 m-4 opacity-0">
                         <div>
-                          <div className="bg-white p-4 rounded-full mb-2">
+                          <div className="p-4 mb-2 bg-white rounded-full">
                             <IoMdHeartEmpty />
                           </div>
-                          <div className="bg-white p-4 rounded-full">
+                          <div className="p-4 bg-white rounded-full">
                             <IoMdSearch />
                           </div>
                         </div>
                       </div>
-                      <div className="opacity-0 absolute -bottom-3 right-0 bg-white p-4 rounded-s-2xl">
-                        <div className="bg-black text-white h-10 w-10 grid place-items-center rounded-3xl">
+                      <div className="absolute right-0 p-4 bg-white opacity-0 -bottom-3 rounded-s-2xl">
+                        <div className="grid w-10 h-10 text-white bg-black place-items-center rounded-3xl">
                           <button
                             className="text-2xl"
                             onClick={() => handleOpen(item.id)}
@@ -161,7 +161,7 @@ const Shop = () => {
                       </div>
                     </div>
 
-                    <div className="product-details mt-2">
+                    <div className="mt-2 product-details">
                       <p className="mb-2">{item.title}</p>
                       <p>${item.price}</p>
                     </div>
