@@ -1,0 +1,12 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node init && node server.js",
+    "dev": "node init && nodemon server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3"
+  }
+}
